@@ -1,0 +1,27 @@
+# ==========================================================
+# Core Dependencies
+# NOTE: Using the official PyTorch wheel link for CUDA 12.1 
+# (which is compatible with your detected CUDA 12.7)
+# ==========================================================
+torch>=2.1.0 --index-url https://download.pytorch.org/whl/cu121
+torchvision>=0.16.0 --index-url https://download.pytorch.org/whl/cu121
+
+# Scientific Computing & Data Handling
+numpy
+scipy # Required for the HungarianMatcher's linear_sum_assignment (as seen in matcher.py)
+pandas # Used in data_utils.py for CSV processing
+scikit-learn # Used for metrics like classification_report (as seen in detr_pipeline_functions_tensor.py)
+
+# Image & Visualization
+Pillow # Used for image handling (PIL.Image)
+matplotlib # Used for plotting/visualization
+opencv-python # Used for computer vision utilities (cv2)
+
+# COCO Evaluation Utilities
+pycocotools # Required for COCO metrics/evaluation (as seen in coco_eval.py)
+
+# Logging
+tensorboardX # Used for TensorBoard logging (as seen in detr_pipeline_functions_tensor.py)
+
+# Other Utilities
+packaging # Used for version checking (in misc.py)
